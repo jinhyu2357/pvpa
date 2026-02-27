@@ -30,21 +30,3 @@ Paper 서버용 1:1 PvP 허용 관리 플러그인입니다.
 3. 요청 대상이 `/pvpa` 로 수락하면 상호 허용 상태가 되어 PvP가 가능해집니다.
 4. `/pvpc` 는 허용 목록과 대기 요청(양방향)을 함께 정리합니다.
 
-## 개발/실행 명령어
-
-프로젝트 루트(`/workspace/pvpa`)에서 실행합니다.
-
-- 플러그인 빌드(쉐이드 JAR 포함)
-  - `./gradlew build`
-- 개발용 Paper 서버 실행(run-paper)
-  - `./gradlew runServer`
-- 테스트(현재 별도 테스트 코드가 없다면 작업/환경에 따라 실행 시간만 소요될 수 있음)
-  - `./gradlew test`
-
-## 빌드 산출물
-
-- 기본 버전: `1.0`
-- 메인 클래스: `org.example.jinhhyu.pvpa.Pvpa`
-- API 버전: `1.21`
-- 일반적으로 빌드 후 JAR은 `build/libs/` 경로에 생성됩니다.
-
