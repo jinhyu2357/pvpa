@@ -231,8 +231,6 @@ class Pvpa : JavaPlugin(), Listener {
         val senderId = sender.uniqueId
         val targetId = target.uniqueId
 
-        addAllowedOpponent(sender.uniqueId, target.uniqueId)
-
         // Rule #6: requesting PvP revokes your entry from the target's allowed list.
         removeAllowedOpponent(targetId, senderId)
 
@@ -256,7 +254,9 @@ class Pvpa : JavaPlugin(), Listener {
             pendingRequests.remove(sender.uniqueId)
         }
 
+        // Ensure acceptance creates (or restores) mutual PvP allowance for both players.
         addAllowedOpponent(sender.uniqueId, target.uniqueId)
+        addAllowedOpponent(target.uniqueId, sender.uniqueId)
         updatePvpListScoreboards(sender.uniqueId, target.uniqueId)
 
         sender.sendMessage("Accepted ${target.name}'s PvP request.")
